@@ -1,0 +1,9 @@
+module {{cookiecutter.project_slug}}
+
+go 1.23.0
+
+require (
+    github.com/gin-gonic/gin v1.9.1
+    go.uber.org/zap v1.24.0
+)
+

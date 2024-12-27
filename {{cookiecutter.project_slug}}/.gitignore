@@ -1,0 +1,16 @@
+### `.gitignore`
+
+# 编译输出
+/bin/
+/build/
+/dist/
+
+# 日志文件
+*.log
+
+# IDE 文件
+.idea/
+.vscode/
+
+# Go 模块缓存
+go.sum

@@ -1,0 +1,23 @@
+.PHONY: all test lint build clean
+
+# Project variables
+BIN_NAME := {{cookiecutter.project_slug}}
+
+all: lint test build
+
+lint:
+	@echo "Running lint..."
+	golangci-lint run
+
+test:
+	@echo "Running tests..."
+	go test ./...
+
+build:
+	@echo "Building the library..."
+	go build -o $(BIN_NAME).a ./...
+
+clean:
+	@echo "Cleaning up..."
+	rm -f $(BIN_NAME).a
+

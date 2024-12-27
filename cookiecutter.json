@@ -1,0 +1,13 @@
+{
+    "project_name": "My Go Project",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "project_type": ["library", "console", "web", "grpc"],
+    "package_name": "mypackage",
+    "grpc_service_name": "mygrpcservice",
+    "main_package": "main",
+    "author_name": "Your Name",
+    "license": ["MIT", "Apache-2.0", "GPL-3.0", "None"],
+    "timestamp": "{{ cookiecutter.timestamp }}"
+}
+  
+  

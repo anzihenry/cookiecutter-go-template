@@ -1,0 +1,31 @@
+.PHONY: all test lint build run proto clean
+
+# Project variables
+BIN_NAME := {{cookiecutter.project_slug}}
+
+all: lint test build
+
+lint:
+	@echo "Running lint..."
+	golangci-lint run
+
+test:
+	@echo "Running tests..."
+	go test ./...
+
+build:
+	@echo "Building the gRPC server..."
+	go build -o $(BIN_NAME) ./cmd/{{cookiecutter.main_package}}
+
+run:
+	@echo "Running the gRPC server..."
+	./$(BIN_NAME)
+
+proto:
+	@echo "Generating gRPC code..."
+	protoc -I=proto --go_out=. --go-grpc_out=. proto/*.proto
+
+clean:
+	@echo "Cleaning up..."
+	rm -f $(BIN_NAME)
+
