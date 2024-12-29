@@ -14,3 +14,6 @@
 
 # Go 模块缓存
 go.sum
+
+# Mac文件系统残留
+.DS_Store
